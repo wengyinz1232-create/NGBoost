@@ -1,0 +1,17 @@
+{
+  "protocol": "ngboost-lr-depth-fixed150-v1",
+  "learning_rates": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+  "max_depths": [1, 2, 3, 4, 5],
+  "n_estimators": 150,
+  "min_samples_leaf": 20,
+  "minibatch_frac": 0.5,
+  "col_sample": 0.5,
+  "natural_gradient": true,
+  "seed": 20261009,
+  "outer_folds": 10,
+  "inner_folds": 3,
+  "representation": "mfcc_delta",
+  "mode": "augmented",
+  "selection": "mean(clean macro-F1, white_10 macro-F1), averaged over three inner speaker folds",
+  "tie_break": "smaller max_depth, then smaller learning_rate"
+}

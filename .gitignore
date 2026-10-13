@@ -45,5 +45,7 @@ Thumbs.db
 
 # Extended800 retained prediction evidence and local runtime
 .ngboost-extended800/
+.ngboost-grid150/
+runtime/
 !reproduced_results/ngboost-38332286883/comparison/fold_*/*_predictions.npz
 reproduced_results/ngboost-38332286883/*.py
