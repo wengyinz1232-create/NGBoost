@@ -1,0 +1,31 @@
+{
+  "parameter": "max_features",
+  "grids": {
+    "logmel__forest__clean_matched": [
+      0.1,
+      0.3,
+      1.0
+    ],
+    "logmel__forest__augmented": [
+      0.01,
+      0.1,
+      0.3
+    ],
+    "mfcc_delta__forest__clean_matched": [
+      0.01,
+      0.1,
+      0.3
+    ],
+    "mfcc_delta__forest__augmented": [
+      0.01,
+      0.1,
+      0.3
+    ]
+  },
+  "fixed": {
+    "max_depth": 16,
+    "min_samples_leaf": 2,
+    "n_estimators": 60
+  },
+  "note": "Exploratory grids from the verified RF update; per-fold selection remains score argmax."
+}

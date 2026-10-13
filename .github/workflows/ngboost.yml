@@ -1,0 +1,91 @@
+name: NGBoost paired comparison
+on:
+  workflow_dispatch:
+    inputs:
+      protocol:
+        description: NGBoost stage search protocol
+        type: choice
+        default: extended800
+        options:
+          - extended800
+          - legacy200
+permissions:
+  contents: read
+concurrency:
+  group: ngboost-comparison
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-ngboost.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python reproduce.py prepare --work-dir runtime
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ngboost-features
+          path: runtime/data/
+          retention-days: 1
+          if-no-files-found: error
+  paired-fold:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        fold: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-ngboost.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: ngboost-features
+          path: runtime/data
+      - run: python compare_ngboost.py fold --work-dir runtime --fold ${{ matrix.fold }} --protocol ${{ inputs.protocol }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: paired-fold-${{ matrix.fold }}
+          path: runtime/comparison/
+          retention-days: 14
+          if-no-files-found: warn
+  summarize:
+    needs: paired-fold
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-ngboost.txt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: paired-fold-*
+          merge-multiple: true
+          path: runtime/comparison
+      - run: python compare_ngboost.py summarize --work-dir runtime --protocol ${{ inputs.protocol }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ngboost-comparison-evidence
+          path: |
+            runtime/reports/
+            runtime/comparison/
+          retention-days: 14
+          if-no-files-found: error

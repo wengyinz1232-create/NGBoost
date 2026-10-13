@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "tests_passed": 10,
+  "training_folds_successful": 10,
+  "models_hash_verified": 20,
+  "metric_recomputation": "All saved predictions, ten folds, two models, four conditions",
+  "local_reload_scope": "16 held-out recordings per model in each of four conditions",
+  "cloud_summary": "Not started: account payment/spending limit; unchanged summarizer succeeded locally",
+  "training_commit": "1c5ed1eb08c90922f3be7def6672ede6cced73bb",
+  "course_report_modified": false
+}

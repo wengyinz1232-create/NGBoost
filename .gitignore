@@ -1,0 +1,49 @@
+# Local environments and credentials
+.reproduction/
+.reproduction-rf-current/
+.rf-depth-v2/
+.rf-depth-v3/
+.rf-depth-screen/
+.rf-midpoint/
+.ngboost-comparison/
+.audit_deps/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+*.pem
+*.key
+
+# Downloaded audio, feature caches, fitted models and per-example probabilities
+*.zip
+*.wav
+*.npz
+*.pkl
+*.joblib
+*.download
+*.log
+
+# Retain only the new paired experiment's derived predictions for metric audits.
+# These contain probabilities/labels/speaker groups, not raw audio or features.
+!reproduced_results/ngboost-38150310147/comparison/fold_*/*_predictions.npz
+# Verification stages matching core modules here; they are already in the source tree.
+reproduced_results/ngboost-38150310147/*.py
+
+# Course handouts / instructor correspondence stay local
+AudioMNIST_完整版/assignment_sources/
+
+# Editor / OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Extended800 retained prediction evidence and local runtime
+.ngboost-extended800/
+!reproduced_results/ngboost-38332286883/comparison/fold_*/*_predictions.npz
+reproduced_results/ngboost-38332286883/*.py

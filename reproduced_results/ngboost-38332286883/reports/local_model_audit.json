@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "feature_sha256": "3ef363daf025d4ba541a1ca9a03027c4a7a134d084409bf91a3519e1c7e6d3e5",
+  "model_count": 20,
+  "checks": [
+    {
+      "fold": 1,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 5.551115123125783e-17
+    },
+    {
+      "fold": 1,
+      "model": "lightgbm",
+      "selected": 0.0,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.0842021724855044e-19
+    },
+    {
+      "fold": 2,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 3.469446951953614e-18
+    },
+    {
+      "fold": 2,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 8.673617379884035e-19
+    },
+    {
+      "fold": 3,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.0587911840678754e-22
+    },
+    {
+      "fold": 3,
+      "model": "lightgbm",
+      "selected": 0.0,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 4.336808689942018e-19
+    },
+    {
+      "fold": 4,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 6.776263578034403e-21
+    },
+    {
+      "fold": 4,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.0842021724855044e-19
+    },
+    {
+      "fold": 5,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 2.168404344971009e-19
+    },
+    {
+      "fold": 5,
+      "model": "lightgbm",
+      "selected": 0.0,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 2.168404344971009e-19
+    },
+    {
+      "fold": 6,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 2.168404344971009e-19
+    },
+    {
+      "fold": 6,
+      "model": "lightgbm",
+      "selected": 1.0,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 4.336808689942018e-19
+    },
+    {
+      "fold": 7,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.1102230246251565e-16
+    },
+    {
+      "fold": 7,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.734723475976807e-18
+    },
+    {
+      "fold": 8,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 6.938893903907228e-18
+    },
+    {
+      "fold": 8,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 5.551115123125783e-17
+    },
+    {
+      "fold": 9,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 0.0
+    },
+    {
+      "fold": 9,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 1.0842021724855044e-19
+    },
+    {
+      "fold": 10,
+      "model": "ngboost",
+      "selected": 800,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 6.938893903907228e-18
+    },
+    {
+      "fold": 10,
+      "model": "lightgbm",
+      "selected": 0.1,
+      "artifact_hash_verified": true,
+      "max_probability_difference": 4.336808689942018e-19
+    }
+  ],
+  "scope": "All 20 artifact hashes; reload 16 held-out recordings per model in each of four conditions. Full saved prediction metrics checked separately."
+}

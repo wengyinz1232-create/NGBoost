@@ -1,0 +1,46 @@
+{
+  "signature": {
+    "raw_sha256": "9619c59a345ccc39c0c6e3de3b5420db29eac95a46528e7fb77fb3d7d517199b",
+    "frontend_sha256": "0b3c0141a23322170190a803a245f0e5ec7aaaf9166907f4f90bbd554a2eebdc",
+    "prepare_sha256": "ffa36356f8da318c2fb71bd2fdda68dee3b56e946ba0543000e4b79b2bf8522a"
+  },
+  "revision": "630d7dab4c040882834de6fa21baf9a60372accd",
+  "source_url": "https://codeload.github.com/soerenab/AudioMNIST/zip/630d7dab4c040882834de6fa21baf9a60372accd",
+  "original_recordings": 30000,
+  "selected_recordings": 12000,
+  "speakers": 60,
+  "classes": 10,
+  "selection": "Every speaker, every digit, recording indices 0 through 19; same subset as exploration.",
+  "class_counts": {
+    "0": 1200,
+    "1": 1200,
+    "2": 1200,
+    "3": 1200,
+    "4": 1200,
+    "5": 1200,
+    "6": 1200,
+    "7": 1200,
+    "8": 1200,
+    "9": 1200
+  },
+  "original_duration_range_seconds": [
+    0.2931875,
+    0.9998541666666667
+  ],
+  "duplicate_pcm_count": 0,
+  "feature_dimensions": {
+    "logmel": 256,
+    "mfcc_delta": 320
+  },
+  "conditions": [
+    "clean",
+    "white_20",
+    "white_10",
+    "pink_10"
+  ],
+  "seed": 20261009,
+  "cache_sha256": {
+    "logmel": "afe668e9ff5d9eb9fbdb5a90c1ec2cce7928686ae858d27e748aa1c768e1b891",
+    "mfcc_delta": "00bf7fb62a18db6bada4f82fe7c078aba23b7047fd6678ea13d450d13fa437f8"
+  }
+}

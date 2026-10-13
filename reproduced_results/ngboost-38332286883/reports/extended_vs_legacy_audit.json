@@ -1,0 +1,77 @@
+{
+  "folds": 10,
+  "same_speaker_splits": true,
+  "feature_file_hash_matches_by_fold": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "expanded_stage_counts": {
+    "grid": [
+      200,
+      400,
+      800
+    ],
+    "counts": [
+      0,
+      0,
+      10
+    ],
+    "middle_unique_mode": false,
+    "warnings": 0
+  },
+  "selected_by_fold": [
+    {
+      "fold": 1,
+      "stages": 800
+    },
+    {
+      "fold": 2,
+      "stages": 800
+    },
+    {
+      "fold": 3,
+      "stages": 800
+    },
+    {
+      "fold": 4,
+      "stages": 800
+    },
+    {
+      "fold": 5,
+      "stages": 800
+    },
+    {
+      "fold": 6,
+      "stages": 800
+    },
+    {
+      "fold": 7,
+      "stages": 800
+    },
+    {
+      "fold": 8,
+      "stages": 800
+    },
+    {
+      "fold": 9,
+      "stages": 800
+    },
+    {
+      "fold": 10,
+      "stages": 800
+    }
+  ],
+  "notes": [
+    "Same corpus and previously explored folds; not independent confirmation.",
+    "New/old wall times use different Actions runs; same-run NGBoost/LightGBM paired timing is the controlled comparison.",
+    "Fold SD is descriptive, not an independent confidence interval."
+  ]
+}

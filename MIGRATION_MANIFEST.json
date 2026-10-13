@@ -1,0 +1,543 @@
+{
+  "source_repository": "https://github.com/wengyinz1232-create/audiomnist-noise-robustness",
+  "source_commit": "3b6528bd7da32c772a63d4c7df449cd0faf67ecb",
+  "copied_file_count": 107,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 174,
+      "sha256": "284fa4ffb83dd8efc434b4b783d35b2f1a239701cdbb3bddbd71cae21ceaff91"
+    },
+    {
+      "path": ".github/workflows/ngboost.yml",
+      "bytes": 2699,
+      "sha256": "86eb1bdbf72f2c534823d7385c1ef1efad69481a1fb55b1d4a346c57dd22f603"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1169,
+      "sha256": "202c8810cecd17cfd0453ffde9951c6b8376fe921c0ad2ba90ccd77d7a173377"
+    },
+    {
+      "path": "AudioMNIST_完整版/common.py",
+      "bytes": 808,
+      "sha256": "7f06eb329a150a82cb0cc15f91698f092834811ff39db726991b4bace73c7c60"
+    },
+    {
+      "path": "AudioMNIST_完整版/data/feature_names.json",
+      "bytes": 19018,
+      "sha256": "90abd743ac8131de02cb718d2315790666e5ae82b0c10be196d407c4536ece5c"
+    },
+    {
+      "path": "AudioMNIST_完整版/data/inventory.json",
+      "bytes": 1315,
+      "sha256": "8dfab38130f550c170fe8417184c60036011898e7002eecd246b671045f3f178"
+    },
+    {
+      "path": "AudioMNIST_完整版/data/sample_manifest.json",
+      "bytes": 1576275,
+      "sha256": "55c469cd6ba571a0fbf727d9b4f07e9c4962ff10e58c25d1d58f169d7350ed3c"
+    },
+    {
+      "path": "AudioMNIST_完整版/data_raw/SOURCE_LICENSE",
+      "bytes": 1086,
+      "sha256": "1923fd986a981f2817b6c19b5c82b455a984c5cc9491eeff69527a104b6add1f"
+    },
+    {
+      "path": "AudioMNIST_完整版/data_raw/SOURCE_README.md",
+      "bytes": 2595,
+      "sha256": "23ba82be4951ed5dd9487b9358f027ab88120f93f30e0bfb5861ba2f0b3611da"
+    },
+    {
+      "path": "AudioMNIST_完整版/evaluation.py",
+      "bytes": 11668,
+      "sha256": "b2b8fe60a427fd785734969150c620711b5646b06ccb492b96201996084f4d43"
+    },
+    {
+      "path": "AudioMNIST_完整版/features.py",
+      "bytes": 2901,
+      "sha256": "0b3c0141a23322170190a803a245f0e5ec7aaaf9166907f4f90bbd554a2eebdc"
+    },
+    {
+      "path": "AudioMNIST_完整版/predict.py",
+      "bytes": 1724,
+      "sha256": "c3dac35a4f6eeec952e31ea49ed67355bde114392764428d685fa700e5bf8c3b"
+    },
+    {
+      "path": "AudioMNIST_完整版/prepare_data.py",
+      "bytes": 5388,
+      "sha256": "ffa36356f8da318c2fb71bd2fdda68dee3b56e946ba0543000e4b79b2bf8522a"
+    },
+    {
+      "path": "AudioMNIST_完整版/requirements-plots.txt",
+      "bytes": 39,
+      "sha256": "3a452fe997028c6dbfe696fa0b3506a735955db1c107fedff0210fb38bda81b2"
+    },
+    {
+      "path": "AudioMNIST_完整版/requirements.txt",
+      "bytes": 84,
+      "sha256": "03539343333fea70d6f25da2bae721dc838312b4a189c2854e1037e0ae14f46f"
+    },
+    {
+      "path": "AudioMNIST_完整版/rf_settings.json",
+      "bytes": 556,
+      "sha256": "d2469c5bba26cbf46dbd5d181bd2d5b62ce9a08923686bffcf17151539e85ae7"
+    },
+    {
+      "path": "AudioMNIST_完整版/verify.py",
+      "bytes": 7310,
+      "sha256": "9b1aeda9d19d5970c7c8a7e03fd35f95765c7fb5c1df43b195b5ff8e83ef5008"
+    },
+    {
+      "path": "AudioMNIST_完整版/verify_saved_run.py",
+      "bytes": 3032,
+      "sha256": "15dae7680a48dc881e0189a2b247aa527676a812cf2d243f04eff3d29e3a69f8"
+    },
+    {
+      "path": "compare_ngboost.py",
+      "bytes": 19612,
+      "sha256": "0eb8b59f6d4407178f6f0f439dfc89db828247bbff62893657f23fcd83f80666"
+    },
+    {
+      "path": "docs/NGBOOST_EXPERIMENT.md",
+      "bytes": 9590,
+      "sha256": "036533789f6e2d9b318ce6df27b80ce32f16f7b9a07153af43e0ca7d566f6f47"
+    },
+    {
+      "path": "report_ngboost.py",
+      "bytes": 6617,
+      "sha256": "345b1fa511741bd1c034a4be3d7f410ce98fde339bc4d41524d6a97ce3742a8e"
+    },
+    {
+      "path": "reproduce.py",
+      "bytes": 15175,
+      "sha256": "4a51306905c93c34bb37d69d83a89942e6f4ceddef2fb9dd69e0052d6c6d01bd"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/NGBOOST_RESULTS_ZH.md",
+      "bytes": 5021,
+      "sha256": "f37a97e899e6881355fc623643d2755e47aadbdd3df57b50d1c7f9ab69aebd2e"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_01/lightgbm_predictions.npz",
+      "bytes": 366828,
+      "sha256": "6eeec8ebe64bc60f9552e828d398d7fe760e83e0ffe828d73691ed034918392e"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_01/ngboost_predictions.npz",
+      "bytes": 369322,
+      "sha256": "d8178eef73f8055ed5a85c350b5dd0c64537bf1579e43bfdd9a9cecc35137c21"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_01/result.json",
+      "bytes": 38671,
+      "sha256": "9fa76bf8d934d75ec7880ecce21dbe7218d61a1746efc99d7042f79853750a37"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_02/lightgbm_predictions.npz",
+      "bytes": 366814,
+      "sha256": "6e3bc2e6beea5263d888ae3775c7a7871e45b02dd643279010529b161cc949cf"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_02/ngboost_predictions.npz",
+      "bytes": 369647,
+      "sha256": "74d5256ae48787e256572671467176a5b709d14f3a998d945d8536febca160bf"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_02/result.json",
+      "bytes": 38457,
+      "sha256": "af493263860a0057791bed6592cf04f872afd76c2b3392cbb7ab9322467d6ab0"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_03/lightgbm_predictions.npz",
+      "bytes": 366866,
+      "sha256": "784bdc3dd0f0d74cd896eb9653b41166d17f4730f3239f06eb0375280e4e2040"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_03/ngboost_predictions.npz",
+      "bytes": 368817,
+      "sha256": "00ae104d5253c97c0bb6fbed7d4f0490a0bec6ae5a604acb34a3a57e418e6b0d"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_03/result.json",
+      "bytes": 38721,
+      "sha256": "9eed2ddcbacf6cd0c1aa8551c0ec22d766050260ca1d0090a4ca5b3abb94c8cc"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_04/lightgbm_predictions.npz",
+      "bytes": 366798,
+      "sha256": "0cd6767c4a7783618001dd0589355b8d43cde36e9486342bc03f8ef4a3014c1f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_04/ngboost_predictions.npz",
+      "bytes": 369483,
+      "sha256": "1edd4cc3da435aff6fa883700f081aec8d857f0c008c16601b7a252521e13c8a"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_04/result.json",
+      "bytes": 38551,
+      "sha256": "f93f622b347efb192d22feb1a50bb176c2d256420261ffc7de4a4c6f190eaec9"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_05/lightgbm_predictions.npz",
+      "bytes": 366857,
+      "sha256": "fe44e6a94026b6412556cde29444269359ef59d489629b9703361c7810494ada"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_05/ngboost_predictions.npz",
+      "bytes": 368959,
+      "sha256": "bc25612c45bb7a2f3652bba1c449d57a0ef9f908cb45745a1ded9c784f9e83f8"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_05/result.json",
+      "bytes": 38627,
+      "sha256": "8298553e75119fef77893a27e4640deed4aec11d4c4e24b62f234d6011c287e5"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_06/lightgbm_predictions.npz",
+      "bytes": 366794,
+      "sha256": "a73e048ab171f108786a493b42d682bbb04669d372814782d91cbb4e4d171aac"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_06/ngboost_predictions.npz",
+      "bytes": 369727,
+      "sha256": "2f8d34e9420b120038bfc7115a8043053c796a13e4c353b48e66f02e5dae3870"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_06/result.json",
+      "bytes": 38541,
+      "sha256": "979669a10953c6bb85fd0aafb11c3fa19529e1279ab8f6ff4ccb281b694d8474"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_07/lightgbm_predictions.npz",
+      "bytes": 366821,
+      "sha256": "aac7d6de15daa0cb1b60c9d1ccc4e12ce60cef0e2fd77337d86712af41d529f0"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_07/ngboost_predictions.npz",
+      "bytes": 368995,
+      "sha256": "fff5b7e4314be1ae00c608382c22817185684af512822af573bdfc6029a9047d"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_07/result.json",
+      "bytes": 38662,
+      "sha256": "233c2464c8c697c9b7d938e992adac7257d5d5b21a3e3fdffc979fd7f36e2c3e"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_08/lightgbm_predictions.npz",
+      "bytes": 366920,
+      "sha256": "ec8e697226c800a28a9fef0af785b6541c0ddc0cef8ae5c42066e665e3030ea8"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_08/ngboost_predictions.npz",
+      "bytes": 369193,
+      "sha256": "322377e5f641eaeacbfd5201e869cf45c4c5adf81a93022212f3323a29acf81b"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_08/result.json",
+      "bytes": 38603,
+      "sha256": "421be38a402d25f9ce4c78033e26563a0c5dce0e8c94a15109e0b803781c7887"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_09/lightgbm_predictions.npz",
+      "bytes": 366906,
+      "sha256": "c77341884ffd2da5240c87b5a78859710031a62b9bd80944d31e1e03be48ef5f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_09/ngboost_predictions.npz",
+      "bytes": 369536,
+      "sha256": "314ab52697a05a9af88e78777ec7bc004c9aaa48e1177810a0a27375a7ef64e6"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_09/result.json",
+      "bytes": 38577,
+      "sha256": "348d73eda3cc0902499e37db4c71724446972c4fd9043555b8557f2214879c40"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_10/lightgbm_predictions.npz",
+      "bytes": 366738,
+      "sha256": "0da80f29ddbcbf06def50403eede1fdf6466091e0ca849598b0aeb4fbd0ebe20"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_10/ngboost_predictions.npz",
+      "bytes": 369966,
+      "sha256": "de23d22326a80d2f50513900f05343ac093e3d8615cb32d8e29848c6310624aa"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/comparison/fold_10/result.json",
+      "bytes": 38344,
+      "sha256": "c68c1ceb3442bfd75206686a04cb2a9fb623ec75182c61213a5f47b1392beb64"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/ngboost_lightgbm_comparison.png",
+      "bytes": 89134,
+      "sha256": "f232fbe4a6af44d41244932994d29af9bb91d7b964cc14fabd26c777aa9d9951"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/reports/RESULTS.md",
+      "bytes": 1306,
+      "sha256": "fb4b286e7331624abd72996360c25e1758fd8c97cfc34351bc17aaf40e02e354"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/reports/comparison.json",
+      "bytes": 16813,
+      "sha256": "595b5ba9bcaabb0c7af9d8733f442464bb3f9695a1bd4c551f520384088c7f22"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/reports/paired_differences.csv",
+      "bytes": 2678,
+      "sha256": "20ead9cdefbaa186f5a9fc0ee163fc08e81b782a4fdb1c112f36375b15fe15a2"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/reports/summary.csv",
+      "bytes": 1852,
+      "sha256": "054d1b974659bb0156f19a637e3b7f0596731f8bdf6ca14403063103f9153f16"
+    },
+    {
+      "path": "reproduced_results/ngboost-38150310147/run.json",
+      "bytes": 24262,
+      "sha256": "f92293ba6f71b5a6d03ba71fe398638612ea36ab7e8cac390eb159f74c15da7f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/NGBOOST_RESULTS_ZH.md",
+      "bytes": 8989,
+      "sha256": "26c2f3b384c6cd2c697f8e83befa0fbcbe1ab9d09f709dbf9aa9a786ea2f2a1c"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_01/lightgbm_predictions.npz",
+      "bytes": 366828,
+      "sha256": "6eeec8ebe64bc60f9552e828d398d7fe760e83e0ffe828d73691ed034918392e"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_01/ngboost_predictions.npz",
+      "bytes": 371732,
+      "sha256": "0e8c6ebdf4c4897768d891c6e74d4b794e35ff30ace5207baecfe3a1f71f9930"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_01/result.json",
+      "bytes": 55795,
+      "sha256": "385c7460f1f29eb6a3008a71d362fe5fd12a955e3db2865646bd8e484ff04c86"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_02/lightgbm_predictions.npz",
+      "bytes": 366814,
+      "sha256": "6e3bc2e6beea5263d888ae3775c7a7871e45b02dd643279010529b161cc949cf"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_02/ngboost_predictions.npz",
+      "bytes": 371300,
+      "sha256": "6c78f3e501e71524e7b2eb624de2e7ab52f1debc3de77d5572c951e59668abec"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_02/result.json",
+      "bytes": 55775,
+      "sha256": "9ae9f2fdf6b13295601fe8604bed2c987900cdfdbf5cf79bdf861091e463247c"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_03/lightgbm_predictions.npz",
+      "bytes": 366866,
+      "sha256": "784bdc3dd0f0d74cd896eb9653b41166d17f4730f3239f06eb0375280e4e2040"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_03/ngboost_predictions.npz",
+      "bytes": 371957,
+      "sha256": "9a0f08afbff5820f78bf1416d04d35543edf14912d47f97a534b47834a588152"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_03/result.json",
+      "bytes": 55997,
+      "sha256": "e2f14d12a46c4b3985b1294a3e81afe0f70dfb72b54bfd78ac0f18333af61dd2"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_04/lightgbm_predictions.npz",
+      "bytes": 366798,
+      "sha256": "0cd6767c4a7783618001dd0589355b8d43cde36e9486342bc03f8ef4a3014c1f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_04/ngboost_predictions.npz",
+      "bytes": 371640,
+      "sha256": "460ff39340239929e93fed628046621e1139e5bf37ef040b74a68453278f619f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_04/result.json",
+      "bytes": 55808,
+      "sha256": "b89814be6cb966e4b5712657ac433844a5a90a9c9d1b33451029c2f3565d6d42"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_05/lightgbm_predictions.npz",
+      "bytes": 366857,
+      "sha256": "fe44e6a94026b6412556cde29444269359ef59d489629b9703361c7810494ada"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_05/ngboost_predictions.npz",
+      "bytes": 371871,
+      "sha256": "52fda8a3b4383f434f9e38f8829edb5fa97e35bff3819bd402852c56dad6f5f2"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_05/result.json",
+      "bytes": 55895,
+      "sha256": "67182e270f0c48fe1b906d7fbae6c1a9d3320ae80b6b3880d85de0092ae29da4"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_06/lightgbm_predictions.npz",
+      "bytes": 366794,
+      "sha256": "a73e048ab171f108786a493b42d682bbb04669d372814782d91cbb4e4d171aac"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_06/ngboost_predictions.npz",
+      "bytes": 371847,
+      "sha256": "2bdfe8adc3dc59172b0b93eebf6ea776b2ed30ac1090436aa433fe3f663318d9"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_06/result.json",
+      "bytes": 55845,
+      "sha256": "81a878c2f275ef6d3a2265f9a7ee2793f5066768b9859fe0ad7c56c38e7b731d"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_07/lightgbm_predictions.npz",
+      "bytes": 366821,
+      "sha256": "aac7d6de15daa0cb1b60c9d1ccc4e12ce60cef0e2fd77337d86712af41d529f0"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_07/ngboost_predictions.npz",
+      "bytes": 372081,
+      "sha256": "47e7f21fb42ca0f4d54795e5d9d33c9e4412a9089a0ccfbbf5282af78870fcba"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_07/result.json",
+      "bytes": 55815,
+      "sha256": "de5406dd2f3709aedc74c1886bc41306b312d58a9ee94e49b49988acad339fca"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_08/lightgbm_predictions.npz",
+      "bytes": 366920,
+      "sha256": "ec8e697226c800a28a9fef0af785b6541c0ddc0cef8ae5c42066e665e3030ea8"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_08/ngboost_predictions.npz",
+      "bytes": 372054,
+      "sha256": "58e285ac413a003f1b299cd16ef12138639c4a606a905e07908e610993210e34"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_08/result.json",
+      "bytes": 55816,
+      "sha256": "c04a71b7905f0f144b8becbab31e383a5186b314a597bfe91bbf39e12bbb929e"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_09/lightgbm_predictions.npz",
+      "bytes": 366906,
+      "sha256": "c77341884ffd2da5240c87b5a78859710031a62b9bd80944d31e1e03be48ef5f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_09/ngboost_predictions.npz",
+      "bytes": 371738,
+      "sha256": "c9163b6115a5470f29ab0e865c0cfaa5ec72f0f0d6bd5b6246e9058948d1adee"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_09/result.json",
+      "bytes": 55815,
+      "sha256": "89e09c5e4e9313564dfe848a518152aea400d38d3da28805cc9849edbe7ea429"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_10/lightgbm_predictions.npz",
+      "bytes": 366738,
+      "sha256": "0da80f29ddbcbf06def50403eede1fdf6466091e0ca849598b0aeb4fbd0ebe20"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_10/ngboost_predictions.npz",
+      "bytes": 371230,
+      "sha256": "d767f68870ffae11f013b3cb353bd92e87cb0c95a22410a034fe49a03bff4255"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/comparison/fold_10/result.json",
+      "bytes": 55517,
+      "sha256": "0ad7fce86539b7f10a9ab0f1c17d13c739b3c169775099d1b597825ae454a71f"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/extended_stage_comparison.png",
+      "bytes": 174849,
+      "sha256": "56de4c214000e0617c2dd431dad6a9785726d07e4670fd77e940b22f33e16a50"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/ngboost_lightgbm_comparison.png",
+      "bytes": 92208,
+      "sha256": "9b8582aa61bfd9ba3a4d98cf6b3f6fa3e3b5879acf5769520572538980c2e08a"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/RESULTS.md",
+      "bytes": 1308,
+      "sha256": "f0b8876c1632db348b761832876e4eb59897001eaf5d3bd8196ce519839f246c"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/comparison.json",
+      "bytes": 16838,
+      "sha256": "558c57a82e75261d7731749b25ae8556d28f4febda916b0330c0dfd8302ff80c"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/completion_audit.json",
+      "bytes": 494,
+      "sha256": "59fed5f31e5cfdc876ab2eebeb6ede691eb6b1be9aa8e148bd9ac1dafd881249"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/extended_vs_legacy_audit.json",
+      "bytes": 1202,
+      "sha256": "2a828cf59aef3271a21b7b8f1b3a0fb9313a9fc1e3275944c258bf4d7a0995d6"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/extended_vs_legacy_folds.csv",
+      "bytes": 12597,
+      "sha256": "5b03e4e9be037ca430e97d179479703b4562f4493829b57476484332f912df3b"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/extended_vs_legacy_summary.csv",
+      "bytes": 1546,
+      "sha256": "57bba9bd1f6f8070f0b76dead5b8d7b7a193ed055956c28d728496c940654627"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/local_model_audit.json",
+      "bytes": 3804,
+      "sha256": "d6a38b06b0c886d7aaa82770ad8e58a9afdd14da37989e3c3980e51880ab516c"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/paired_differences.csv",
+      "bytes": 2682,
+      "sha256": "885e00bb68813e73420705e23910d3f3ebffddd22ed6e190f70ef1bbb1fe7eeb"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/reports/summary.csv",
+      "bytes": 1861,
+      "sha256": "b7f2e977e828abb89c5667ca86930005f62597b56b32eaae31c61a6b93868488"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/run.json",
+      "bytes": 22770,
+      "sha256": "fa7ef3e865fad41e7faa1a0ad20ec5ab18f954fdb60eeea10495000576775bfe"
+    },
+    {
+      "path": "reproduced_results/ngboost-38332286883/summary_job_annotations.json",
+      "bytes": 915,
+      "sha256": "239d491333fcc802b2624311685ec74013b097855cb704bc96e709aa719f2fbc"
+    },
+    {
+      "path": "requirements-ngboost.txt",
+      "bytes": 166,
+      "sha256": "2acce9f0bfdf739e5ce5c54cc172342e398105adfe40973fe91183f1012ae5bd"
+    },
+    {
+      "path": "requirements-reproduce.txt",
+      "bytes": 47,
+      "sha256": "919b01bed31edbfd756c72e7b783d4bcef53fdca2f3184e51927359d9a12dbde"
+    },
+    {
+      "path": "tests/test_ngboost_comparison.py",
+      "bytes": 5119,
+      "sha256": "b9119e1e6d7ae5f0c6079b273268419dfa7a7dad8cdebe65e9706ee06b2e9260"
+    },
+    {
+      "path": "tests/test_reproduction.py",
+      "bytes": 2350,
+      "sha256": "b7bc142fc50773eaf2fbaea94d765d3053ee4328ef329c8be4ef660ba3cc94bc"
+    }
+  ],
+  "verification": "All copied files match the source checkout byte-for-byte. 10 existing tests and reproduce.py self-test passed. No full training rerun."
+}

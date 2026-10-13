@@ -1,0 +1,572 @@
+{
+  "status": "PASS",
+  "scope": "MFCC+delta, white-10 augmented, 10 x 3 manual speaker CV",
+  "plan": {
+    "protocol_version": 1,
+    "representation": "mfcc_delta",
+    "mode": "augmented",
+    "outer_folds": 10,
+    "inner_folds": 3,
+    "seed": 20261009,
+    "selection": "mean(clean macro-F1, white_10 macro-F1)",
+    "ngboost": {
+      "grid": [
+        50,
+        100,
+        200
+      ],
+      "parameter": "n_estimators",
+      "learning_rate": 0.03,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "minibatch_frac": 0.5,
+      "col_sample": 0.5,
+      "natural_gradient": true
+    },
+    "lightgbm": {
+      "grid": [
+        0.0,
+        0.1,
+        1.0
+      ],
+      "parameter": "reg_lambda",
+      "n_estimators": 70,
+      "num_leaves": 7,
+      "learning_rate": 0.08,
+      "min_child_samples": 20,
+      "top_rate": 0.2,
+      "other_rate": 0.1
+    },
+    "compute": "same runner per paired fold; BLAS=1; LightGBM threads=2; NGBoost base trees use serial fitting",
+    "stage_reuse": "Three 200-stage inner NGBoost fits score prefixes 50/100/200; selected stage count refitted on outer training data.",
+    "test_policy": "Evaluate each outer condition once after inner selection; no outer-score-based retuning."
+  },
+  "folds": 10,
+  "paired": [
+    {
+      "condition": "clean",
+      "metric": "macro_f1",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.03648547176773902,
+      "fold_sd": 0.015437302014708386,
+      "min": -0.06942589098778595,
+      "max": -0.018483011721737164,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.018483011721737164,
+        -0.028378562438576505,
+        -0.026363201008941184,
+        -0.04607590562936159,
+        -0.051201003899029374,
+        -0.033386925419569335,
+        -0.06942589098778595,
+        -0.03604659055277981,
+        -0.03468962525070629,
+        -0.020804000768902986
+      ]
+    },
+    {
+      "condition": "clean",
+      "metric": "accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.03641666666666665,
+      "fold_sd": 0.015501144919881278,
+      "min": -0.07000000000000006,
+      "max": -0.018333333333333313,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.018333333333333313,
+        -0.02833333333333332,
+        -0.026666666666666616,
+        -0.046666666666666634,
+        -0.04999999999999993,
+        -0.033333333333333326,
+        -0.07000000000000006,
+        -0.035833333333333384,
+        -0.03416666666666668,
+        -0.02083333333333326
+      ]
+    },
+    {
+      "condition": "clean",
+      "metric": "macro_precision",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.0336262748788417,
+      "fold_sd": 0.013216429885758045,
+      "min": -0.0620479266130981,
+      "max": -0.018316906102148534,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.018316906102148534,
+        -0.02736835369079582,
+        -0.023185349528150212,
+        -0.043961131522026076,
+        -0.0437779344450433,
+        -0.031027279398313068,
+        -0.0620479266130981,
+        -0.03338205450339826,
+        -0.032353287091906324,
+        -0.0208425258935373
+      ]
+    },
+    {
+      "condition": "clean",
+      "metric": "balanced_accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.03641666666666664,
+      "fold_sd": 0.01550114491988113,
+      "min": -0.06999999999999973,
+      "max": -0.018333333333333424,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.018333333333333424,
+        -0.0283333333333331,
+        -0.02666666666666695,
+        -0.04666666666666641,
+        -0.04999999999999982,
+        -0.03333333333333344,
+        -0.06999999999999973,
+        -0.035833333333333384,
+        -0.03416666666666679,
+        -0.02083333333333337
+      ]
+    },
+    {
+      "condition": "clean",
+      "metric": "log_loss",
+      "difference": "NGBoost minus LightGBM",
+      "mean": 0.08230620550624053,
+      "fold_sd": 0.04130145267516847,
+      "min": 0.043910450159793876,
+      "max": 0.17225993361450123,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        0.046451037792277924,
+        0.06306599339378097,
+        0.06124524738095896,
+        0.09565708267475198,
+        0.13439679182157277,
+        0.05897589272835427,
+        0.17225993361450123,
+        0.08053953774301889,
+        0.06656008775339448,
+        0.043910450159793876
+      ]
+    },
+    {
+      "condition": "white_20",
+      "metric": "macro_f1",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05855378871918985,
+      "fold_sd": 0.017156006839953226,
+      "min": -0.07834340964582953,
+      "max": -0.03031702884561338,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.058329662348513,
+        -0.03031702884561338,
+        -0.07834340964582953,
+        -0.05629193763528395,
+        -0.03868028815251878,
+        -0.05305203748684795,
+        -0.07812299332965789,
+        -0.07790164154269985,
+        -0.06884526510785127,
+        -0.045653623097082874
+      ]
+    },
+    {
+      "condition": "white_20",
+      "metric": "accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05800000000000001,
+      "fold_sd": 0.01694763175851489,
+      "min": -0.07999999999999996,
+      "max": -0.029999999999999916,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.05833333333333335,
+        -0.029999999999999916,
+        -0.07333333333333336,
+        -0.05666666666666664,
+        -0.03916666666666668,
+        -0.0525000000000001,
+        -0.07999999999999996,
+        -0.07833333333333337,
+        -0.0675,
+        -0.04416666666666669
+      ]
+    },
+    {
+      "condition": "white_20",
+      "metric": "macro_precision",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05349799144988952,
+      "fold_sd": 0.01466978438215543,
+      "min": -0.07306163713109226,
+      "max": -0.029148261453091684,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.05344475427919404,
+        -0.029148261453091684,
+        -0.05969491209237421,
+        -0.053939835007502546,
+        -0.036408002627974945,
+        -0.050406898017977375,
+        -0.07263005687743007,
+        -0.07306163713109226,
+        -0.06440634226433029,
+        -0.041839214747927844
+      ]
+    },
+    {
+      "condition": "white_20",
+      "metric": "balanced_accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05800000000000002,
+      "fold_sd": 0.016947631758514936,
+      "min": -0.08000000000000007,
+      "max": -0.030000000000000027,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.05833333333333346,
+        -0.030000000000000027,
+        -0.07333333333333325,
+        -0.056666666666666865,
+        -0.03916666666666657,
+        -0.05249999999999999,
+        -0.08000000000000007,
+        -0.07833333333333359,
+        -0.0674999999999999,
+        -0.044166666666666465
+      ]
+    },
+    {
+      "condition": "white_20",
+      "metric": "log_loss",
+      "difference": "NGBoost minus LightGBM",
+      "mean": 0.1532207823784266,
+      "fold_sd": 0.03708431116814948,
+      "min": 0.10283024095528856,
+      "max": 0.2106036528103108,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        0.1628204489484998,
+        0.11678254916671413,
+        0.19924604900704834,
+        0.1410180359091627,
+        0.14306568114158139,
+        0.14799807703367585,
+        0.19084510893368933,
+        0.2106036528103108,
+        0.11699797987829508,
+        0.10283024095528856
+      ]
+    },
+    {
+      "condition": "white_10",
+      "metric": "macro_f1",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.06835936249754611,
+      "fold_sd": 0.023307771185099118,
+      "min": -0.10034794462772534,
+      "max": -0.039059793809057664,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.06121453363745921,
+        -0.050106976696155714,
+        -0.10034794462772534,
+        -0.05824062806788066,
+        -0.039059793809057664,
+        -0.05860119820377141,
+        -0.09946426988756729,
+        -0.08334576686261097,
+        -0.09137995840045787,
+        -0.04183255478277492
+      ]
+    },
+    {
+      "condition": "white_10",
+      "metric": "accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.06833333333333333,
+      "fold_sd": 0.02326046823939812,
+      "min": -0.10249999999999992,
+      "max": -0.03916666666666668,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.06166666666666676,
+        -0.04999999999999993,
+        -0.09916666666666663,
+        -0.05833333333333335,
+        -0.03916666666666668,
+        -0.0591666666666667,
+        -0.10249999999999992,
+        -0.08333333333333326,
+        -0.08833333333333337,
+        -0.04166666666666663
+      ]
+    },
+    {
+      "condition": "white_10",
+      "metric": "macro_precision",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.06310656611094118,
+      "fold_sd": 0.021700065730219438,
+      "min": -0.09774636342909437,
+      "max": -0.03804628338549443,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.05461734767527027,
+        -0.04540336958261415,
+        -0.09774636342909437,
+        -0.05574087715473652,
+        -0.03804628338549443,
+        -0.050990088512579246,
+        -0.08488819955203364,
+        -0.0782039233261772,
+        -0.08638835476316853,
+        -0.039040853728243397
+      ]
+    },
+    {
+      "condition": "white_10",
+      "metric": "balanced_accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.0683333333333333,
+      "fold_sd": 0.023260468239398157,
+      "min": -0.10250000000000004,
+      "max": -0.03916666666666668,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.061666666666666536,
+        -0.050000000000000044,
+        -0.09916666666666651,
+        -0.05833333333333324,
+        -0.03916666666666668,
+        -0.05916666666666659,
+        -0.10250000000000004,
+        -0.08333333333333359,
+        -0.08833333333333326,
+        -0.04166666666666652
+      ]
+    },
+    {
+      "condition": "white_10",
+      "metric": "log_loss",
+      "difference": "NGBoost minus LightGBM",
+      "mean": 0.17311249575798632,
+      "fold_sd": 0.03854991219717204,
+      "min": 0.12293755043260282,
+      "max": 0.2502854829384643,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        0.18920671294521038,
+        0.1383318123688285,
+        0.19413226925590915,
+        0.14968659643361482,
+        0.13048687424363578,
+        0.1770327765216784,
+        0.2502854829384643,
+        0.19551720811449602,
+        0.18350767432542303,
+        0.12293755043260282
+      ]
+    },
+    {
+      "condition": "pink_10",
+      "metric": "macro_f1",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.06046130784528695,
+      "fold_sd": 0.01677021694650787,
+      "min": -0.08778180506551647,
+      "max": -0.03671591387180384,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.06854988253961969,
+        -0.06634371356123459,
+        -0.03671591387180384,
+        -0.04689265799749154,
+        -0.04329843341784956,
+        -0.07455721192036113,
+        -0.08778180506551647,
+        -0.06974018238532387,
+        -0.04300733666483281,
+        -0.067725941028836
+      ]
+    },
+    {
+      "condition": "pink_10",
+      "metric": "accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05966666666666669,
+      "fold_sd": 0.017878188656282535,
+      "min": -0.09083333333333332,
+      "max": -0.032500000000000084,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.06833333333333336,
+        -0.06583333333333341,
+        -0.032500000000000084,
+        -0.04583333333333328,
+        -0.04499999999999993,
+        -0.07250000000000001,
+        -0.09083333333333332,
+        -0.06916666666666671,
+        -0.04083333333333339,
+        -0.06583333333333341
+      ]
+    },
+    {
+      "condition": "pink_10",
+      "metric": "macro_precision",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.05669832637349246,
+      "fold_sd": 0.011796534109609905,
+      "min": -0.07623606494524182,
+      "max": -0.041843378732766334,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.059318257952773346,
+        -0.05933555088127673,
+        -0.044981476139229315,
+        -0.04633069033977666,
+        -0.041843378732766334,
+        -0.06001922212159072,
+        -0.07623606494524182,
+        -0.07218872020731093,
+        -0.04567611597480847,
+        -0.06105378644015025
+      ]
+    },
+    {
+      "condition": "pink_10",
+      "metric": "balanced_accuracy",
+      "difference": "NGBoost minus LightGBM",
+      "mean": -0.059666666666666646,
+      "fold_sd": 0.017878188656282497,
+      "min": -0.09083333333333321,
+      "max": -0.032500000000000084,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        -0.06833333333333336,
+        -0.06583333333333341,
+        -0.032500000000000084,
+        -0.04583333333333339,
+        -0.04499999999999993,
+        -0.07249999999999979,
+        -0.09083333333333321,
+        -0.06916666666666671,
+        -0.04083333333333328,
+        -0.0658333333333333
+      ]
+    },
+    {
+      "condition": "pink_10",
+      "metric": "log_loss",
+      "difference": "NGBoost minus LightGBM",
+      "mean": 0.14328865001887137,
+      "fold_sd": 0.040464625982723886,
+      "min": 0.08315728786712273,
+      "max": 0.20559938169444958,
+      "ngboost_wins": 0,
+      "ties": 0,
+      "fold_differences": [
+        0.15061673886604832,
+        0.14506821222031485,
+        0.08315728786712273,
+        0.0846038820359748,
+        0.11270883958751371,
+        0.1882867845465146,
+        0.20559938169444958,
+        0.14660781019630442,
+        0.145342699633081,
+        0.17089486354138972
+      ]
+    }
+  ],
+  "costs": {
+    "ngboost": {
+      "final_fit_seconds_mean": 740.4375940426,
+      "workflow_seconds_mean": 2181.0391155151,
+      "evaluation_seconds_mean": 2.980592932399918,
+      "model_bytes_mean": 2595865.4
+    },
+    "lightgbm": {
+      "final_fit_seconds_mean": 8.203638556700021,
+      "workflow_seconds_mean": 67.29800393340001,
+      "evaluation_seconds_mean": 0.10580357850002997,
+      "model_bytes_mean": 659270.4
+    }
+  },
+  "parameter_audit": {
+    "ngboost": {
+      "grid": [
+        50,
+        100,
+        200
+      ],
+      "counts": [
+        0,
+        0,
+        10
+      ],
+      "middle_unique_mode": false,
+      "warnings": 0
+    },
+    "lightgbm": {
+      "grid": [
+        0.0,
+        0.1,
+        1.0
+      ],
+      "counts": [
+        3,
+        6,
+        1
+      ],
+      "middle_unique_mode": true,
+      "warnings": 0
+    }
+  },
+  "result_sha256": {
+    "comparison\\fold_01\\result.json": "9fa76bf8d934d75ec7880ecce21dbe7218d61a1746efc99d7042f79853750a37",
+    "comparison\\fold_02\\result.json": "af493263860a0057791bed6592cf04f872afd76c2b3392cbb7ab9322467d6ab0",
+    "comparison\\fold_03\\result.json": "9eed2ddcbacf6cd0c1aa8551c0ec22d766050260ca1d0090a4ca5b3abb94c8cc",
+    "comparison\\fold_04\\result.json": "f93f622b347efb192d22feb1a50bb176c2d256420261ffc7de4a4c6f190eaec9",
+    "comparison\\fold_05\\result.json": "8298553e75119fef77893a27e4640deed4aec11d4c4e24b62f234d6011c287e5",
+    "comparison\\fold_06\\result.json": "979669a10953c6bb85fd0aafb11c3fa19529e1279ab8f6ff4ccb281b694d8474",
+    "comparison\\fold_07\\result.json": "233c2464c8c697c9b7d938e992adac7257d5d5b21a3e3fdffc979fd7f36e2c3e",
+    "comparison\\fold_08\\result.json": "421be38a402d25f9ce4c78033e26563a0c5dce0e8c94a15109e0b803781c7887",
+    "comparison\\fold_09\\result.json": "348d73eda3cc0902499e37db4c71724446972c4fd9043555b8557f2214879c40",
+    "comparison\\fold_10\\result.json": "c68c1ceb3442bfd75206686a04cb2a9fb623ec75182c61213a5f47b1392beb64"
+  },
+  "limits": [
+    "One partition; fold SD is not an independent CI.",
+    "Grids were fixed before new outer results; prior corpus exploration remains.",
+    "NGBoost grid selection may hit a boundary; this does not invalidate measurement but limits model tuning/course compliance.",
+    "Unequal model capacity/stage counts; results compare specified pipelines, not universal algorithm superiority.",
+    "Workflow time includes selection, prediction, serialization and verification; different fit counts due to NGBoost stage reuse.",
+    "Serialized bytes are not peak RAM; evaluation includes transforms and four batch predictions, not device latency.",
+    "No new full-data deployment model is trained; twenty outer models are comparison artifacts."
+  ]
+}

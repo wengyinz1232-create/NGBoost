@@ -1,0 +1,9 @@
+-r requirements-reproduce.txt
+ngboost==0.5.11
+lifelines==0.30.3
+autograd==1.9.1
+autograd-gamma==0.5.0
+formulaic==1.2.2
+pandas==2.3.3
+sympy==1.14.0
+cloudpickle==3.1.2
